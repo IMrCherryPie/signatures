@@ -33,7 +33,6 @@ public class SignaturesApplication {
             list.add(levelXml);
         }
         documentXml.setLevelXmls(list);
-        XmlParser xmlParser = new XmlParser();
-        xmlParser.objectToXml("file.xml", documentXml);
+        XmlParser.objectToXml("file.xml", documentXml);
     }
 }

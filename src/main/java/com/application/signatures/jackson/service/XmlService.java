@@ -12,14 +12,8 @@ import java.util.stream.Collectors;
 @Service
 public class XmlService {
 
-    private final XmlParser xmlParser;
-
-    public XmlService(XmlParser xmlParser) {
-        this.xmlParser = xmlParser;
-    }
-
-    public DocumentXml getDocument(File file){
-        return xmlParser.xmlToObject(file);
+    public static   DocumentXml getDocument(File file){
+        return XmlParser.xmlToObject(file);
     }
 
     public void setSign(String fileName, String level, String login, Boolean sign){
@@ -30,7 +24,7 @@ public class XmlService {
         saveDocument(fileName, documentXml);
     }
 
-    public void saveDocument(String filename, DocumentXml document){
-        xmlParser.objectToXml(filename, document);
+    public static void saveDocument(String filename, DocumentXml document){
+        XmlParser.objectToXml(filename, document);
     }
 }
